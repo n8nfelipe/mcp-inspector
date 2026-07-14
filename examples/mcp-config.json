@@ -1,0 +1,4 @@
+{
+  "command": "node",
+  "args": ["../test/fixtures/demo-server.mjs"]
+}

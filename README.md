@@ -5,6 +5,7 @@
 Conecta-se a servidores via `stdio`, `sse` ou `streamable-http`, executa `initialize` + `* /list` e produz o relatório em **Markdown** ou **JSON**.
 
 [![CI](https://github.com/n8nfelipe/mcp-inspector/actions/workflows/ci.yml/badge.svg)](https://github.com/n8nfelipe/mcp-inspector/actions/workflows/ci.yml)
+[![Coverage](https://img.shields.io/badge/coverage-89%25-brightgreen)](https://github.com/n8nfelipe/mcp-inspector)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## Índice
@@ -93,6 +94,22 @@ Exemplo de `mcp.json` (remoto com auth):
   "url": "https://api.exemplo.com/mcp",
   "headers": { "Authorization": "Bearer $TOKEN" }
 }
+```
+
+### Arquivos de exemplo
+
+O repositório traz exemplos prontos em [`examples/`](examples/):
+
+| Arquivo | Descrição |
+| --- | --- |
+| [`examples/mcp-config.json`](examples/mcp-config.json) | Configuração `stdio` de demonstração (servidor de fixture) |
+| [`examples/report-example.md`](examples/report-example.md) | Relatório completo de 15 etapas gerado por esta CLI |
+
+Gere o relatório de exemplo localmente:
+
+```bash
+pnpm build
+node dist/index.js examples/mcp-config.json --output examples/report-example.md
 ```
 
 ## Exemplo de saída
