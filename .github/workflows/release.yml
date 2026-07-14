@@ -27,8 +27,12 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
           generateReleaseNotes: true
+          allowUpdates: true
       - name: Publish to npm
+        if: ${{ secrets.NPM_TOKEN != '' }}
         run: pnpm publish --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
