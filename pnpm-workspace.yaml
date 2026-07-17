@@ -1,0 +1,10 @@
+packages:
+  - "."
+
+onlyBuiltDependencies:
+  - esbuild
+
+supplyChainProtection: false
+
+overrides:
+  vite: ^7.3.0
